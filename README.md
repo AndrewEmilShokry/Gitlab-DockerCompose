@@ -45,7 +45,22 @@ Installing Gitlab Using Docker Compose on Ubuntu
 
 
 
-6-launch your gitlab http: //localhost:8080
+6-launch your gitlab http://localhost:8080/admin/runners and click the Copy token button
+
+
+
+7-then use this command docker exec -it gitlab-runner gitlab-runner register --url "http://gitlab-ce" --clone-url "http://gitlab-ce"
+
+
+
+8-The module provides the following information:
+
+Enter the GitLab instance URL: confirm the entered value (click enter)
+Enter the registration token: enter the token copied before.
+Enter a description for the runner: enter the name of the runner, e.g. docker-runner
+Enter tags for the runner: leave the field blank here
+Enter an executor: enter docker here
+Enter the default Docker image: here we provide the default docker image, e.g. maven: latest
 
 
 
